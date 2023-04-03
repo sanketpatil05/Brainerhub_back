@@ -1,14 +1,14 @@
 const express =require("express")
 import { connect } from "../config/db";
 import Product, { IProduct } from '../model/product.model';
-
+ const cors=require("cors");
 import { userRoute } from "../routes/user.routes";
 import { Request, Response } from "express";
 
 const app = express();
 
 app.use(express.json());
-// app.use(cors());
+ app.use(cors());
 
 app.get("/", (req: Request, res: Response) => {
   res.send("welcome to home page");
